@@ -1,0 +1,17 @@
+#<IfModule mod_rewrite.c>
+#  Options +FollowSymlinks
+#  RewriteEngine On
+#
+##  RewriteRule ^api/(.+)$ /Home/Weixin/index?token=$1 [QSA]
+#
+#  RewriteCond %{REQUEST_FILENAME} !-d
+#  RewriteCond %{REQUEST_FILENAME} !-f
+#
+#  RewriteRule ^(.*)$ control.php?/$1 [QSA,PT,L]
+#</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{Request_FILENAME} !-f
+    RewriteRule !\.(js|ico|gif|jpg|png|css)$ /control.php
+ </IfModule>
